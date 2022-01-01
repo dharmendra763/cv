@@ -1,0 +1,119 @@
+#include <iostream>
+
+using namespace std;
+void pat()
+    {
+    int n=5;
+    for (int row=1;row<2*n;row++)
+    {
+        int columninrow=row>n?2*n-row:row;
+        int spaces = n >= row ? n-row :n-columninrow; 
+        for (int spa=0; spa<spaces;spa++)
+        {
+            cout<<" ";
+        }
+        for (int col=0;col<columninrow;col++)
+        {
+            cout<<"* ";
+        }
+        cout<<"\n";
+    }
+
+    }
+
+void pat12()
+    {
+    int n=5;
+    for (int row=1;row<2*n;row++)
+    {
+        int columninrow=row>n?2*n-row:row;
+        int spaces = n >= row ? n-row :n-columninrow; 
+        
+        for (int spa=0; spa<spaces;spa++)
+        {
+            cout<<" ";
+        }
+        
+        for (int j=columninrow; j>1; j--)
+        {
+            cout<<j;
+        }
+        
+        for (int j=1; j<=columninrow; j++)
+        {
+            cout<<j;
+        }
+        cout<<"\n";
+    }
+
+    }
+    
+void pat30()
+{
+    int n=5;
+    for (int row=1; row<=n; row++)
+    {
+        int spaces=n-row;
+        for (int space=0; space<spaces;space++)
+        {
+            cout<<"  ";
+        }
+        for (int j=row; j>1; j--)
+        {
+            cout<<j<<" ";
+        }
+        for (int j=1; j<=row; j++)
+        {
+            cout<<j<<" ";
+        }
+        cout<<"\n";
+    }
+}
+
+
+int lessof4(int a,int b,int c,int d)
+{
+    int j=1000;
+    if (a<j)
+    {j=a;}
+    if(b<j)
+    {j=b;}
+    if(c<j)
+    {j=c;}
+    if(d<j)
+    {j=d;}
+    return j;
+}
+
+void pat31()
+{
+    int n=4;
+    for (int row=0; row<2*n-1; row++)
+    {
+        for (int col=0; col<2*n-1; col++)
+        {
+            int notoprint=n-lessof4(row,col,2*n-row-2,2*n-col-2);
+            cout<<notoprint<<" ";
+        }
+        cout<<"\n";
+    }
+    
+}
+
+int main()
+{
+    // int n=5;
+    // for (int row=1;row<2*n;row++)
+    // {
+    //     int columninrow=row>n?2*n-row:row;
+    //     for (int col=0;col<columninrow;col++)
+    //     {
+    //         cout<<"* ";
+    //     }
+    //     cout<<"\n";
+    // }
+    pat31();
+    
+
+    return 0;
+}
